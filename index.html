@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="css/images/logo.png">
+    <link rel="stylesheet" media="all" type="text/css" href="css/styles.css" />
+
+    <script type="text/javascript" src="js/scripts.js"></script>
+
+    <title>Search Jeopardy!</title>
+
+</head>
+
+<body>
+
+    <header>
+        <p>Search Jeopardy</p>
+    </header>
+
+    <div id="content">
+        <p>Curious if your favorite topic has been a category on jeopardy? Give it a search!</p> 
+        <h5>If loading is taking too long (> 1 min), you might have a typo in your category search.</h5>   
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div id="filters" onmouseover="changeActiveFilters()">
+                <p>Search by:</p>
+                <button id="answer" class="btn">Answer</button>
+                <button id="question" class="btn">Question</button>
+            </div>
+
+            <br>
+
+            <div id="timeframe" onmouseover="getStartDate(); getEndDate()">
+                <p>Search by timeframe:</p>
+                <p>Start Date: 
+                    <input id="start" type="date">
+                </p>
+                <p>End Date: 
+                    <input id="end" type="date">
+                </p>
+            </div>
+        </div>
+
+        <div class="col">
+            <div id="difficulties" onmouseover="filterByDifficulty()">
+                <p>Enter Difficulty:</p>
+                <button id="100" class="btn">100</button>
+                <button id="200" class="btn">200</button>
+                <button id="300" class="btn">300</button>
+                <button id="400" class="btn">400</button>
+                <button id="500" class="btn">500</button>
+                <button id="none" class="btn">None</button>
+            </div>
+
+            <p></p>
+
+            <div id="doublediv" onclick="activateDouble()"> 
+                <button id="double" class="btn">Include Double</button>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div id="search">
+        <p>Enter the category you want to search by:</p>
+        <input id="searchbarCategory" type="text" placeholder="Search..">
+        <p>Search by question/answer:</p>
+        <input id="searchbar" onkeyup="parse(event)" type="text" placeholder="Search..">
+    </div>
+
+    <div id="go" onclick="parseJSON()"> 
+        <button id="search" class="btn">Go!</button>
+    </div>
+
+    <div id="loader"></div>
+    <div id="data"></div>
+
+
+</body>
+
+</html>
