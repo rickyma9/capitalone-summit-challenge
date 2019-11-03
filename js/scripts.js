@@ -13,7 +13,7 @@ async function parseJSON() {
 
 	/* Parse the JSON text */
 	const Http = new XMLHttpRequest();
-	const url = "http://jservice.io/api/category?id=" + find;
+	const url = "https://cors-anywhere.herokuapp.com/http://jservice.io/api/category?id=" + find;
 	Http.open("GET", url);
 	Http.send();
 
@@ -92,7 +92,7 @@ function findURL() {
 		    if (i>= length) {
 		        return 1;
 		    }
-		    var url = "http://jservice.io/api/categories?count=100&offset=" + i*100;
+		    var url = "https://cors-anywhere.herokuapp.com/http://jservice.io/api/categories?count=100&offset=" + i*100;
 
 		    request.open("GET", url);
 
